@@ -1,4 +1,4 @@
--module(rpg_tool).
+-module(rpg_tools).
 -export([roll/1]).
 
 roll(X) ->

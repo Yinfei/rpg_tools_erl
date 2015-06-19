@@ -5,16 +5,16 @@
 -export([flip_coin/1]).
 
 roll_dice(X) ->
-  random:uniform(X).
+    random:uniform(X).
 
 roll_dice_batch(X, Y) ->
-  [random:uniform(Y) || _ <- lists:seq(1, X)].
+    [random:uniform(Y) || _ <- lists:seq(1, X)].
 
 flip_coin() ->
-  flip_coin(random:uniform(2)).
+    flip_coin(random:uniform(2)).
 
 flip_coin(Result) ->
-  if
-      Result == 2 -> "Heads!";
-      Result /= 2 -> "Tails!"
-  end.
+    if
+        Result == 2 -> "Heads!";
+        Result /= 2 -> "Tails!"
+    end.

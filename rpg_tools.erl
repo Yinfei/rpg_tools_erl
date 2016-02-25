@@ -10,10 +10,10 @@ roll_dice(MaxValue) ->
     random:uniform(MaxValue).
 
 roll_dice(MaxValue, Modifier) ->
-    Modifier + random:uniform(MaxValue).
+    Modifier + roll_dice(MaxValue).
 
 roll_dice_batch(BatchSize, MaxValue) ->
-    [random:uniform(MaxValue) || _ <- lists:seq(1, BatchSize)].
+    [roll_dice(MaxValue) || _ <- lists:seq(1, BatchSize)].
 
 roll_dice_batch(BatchSize, MaxValue, Modifier) ->
     [Modifier + N || N <- roll_dice_batch(SizeSize, MaxValue)].

@@ -16,10 +16,10 @@ roll_dice_batch(BatchSize, MaxValue) ->
     [roll_dice(MaxValue) || _ <- lists:seq(1, BatchSize)].
 
 roll_dice_batch(BatchSize, MaxValue, Modifier) ->
-    [Modifier + N || N <- roll_dice_batch(SizeSize, MaxValue)].
+    [Modifier + N || N <- roll_dice_batch(BatchSize, MaxValue)].
 
 flip_coin() ->
-    flip_coin(random:uniform(2)).
+    flip_coin(roll_dice(2)).
 
 flip_coin(Result) ->
     if

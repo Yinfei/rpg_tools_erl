@@ -3,7 +3,7 @@
 -export([flip/1]).
 
 flip() ->
-    flip(random:uniform(2)).
+    flip(dice:roll(2)).
 
 flip(Result) ->
     if Result =:= 2 -> "Tails!";

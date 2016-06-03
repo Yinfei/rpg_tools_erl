@@ -1,2 +1,9 @@
-# rpg_tools_erl
-Erlang program, tools for RPG and tabletop games
+rpg_tools_erl
+=====
+
+A nice toolbox for RPG and tabletop games!
+
+Build
+-----
+
+    $ rebar3 compile

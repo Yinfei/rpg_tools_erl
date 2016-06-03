@@ -1,0 +1,16 @@
+{application, rpg_tools_erl,
+ [{description, "A RPG toolbox."},
+  {vsn, "0.1.0"},
+  {registered, []},
+  {mod, { rpg_tools_erl_app, []}},
+  {applications,
+   [kernel,
+    stdlib
+   ]},
+  {env,[]},
+  {modules, []},
+
+  {maintainers, ["Yohan Piron"]},
+  {licenses, ['MIT']},
+  {links, [{"GitHub", "https://github.com/Yinfei/rpg_tools_erl"}]}
+ ]}.

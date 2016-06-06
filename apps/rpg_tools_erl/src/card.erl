@@ -1,7 +1,6 @@
 -module(card).
 -export([pick/1]).
--export([pick_32/0]).
--export([pick_54/0]).
+-export([pick_number/1]).
 -export([pick_random/1]).
 -define(HEADS, ["Jack", "Queen", "King", "Ace"]).
 -define(COLORS, ["Clubs", "Hearts", "Diamonds", "Spades"]).
@@ -9,17 +8,14 @@
 -define(DECK_54, lists:append(lists:seq(2, 10), ?HEADS)).
 
 pick(DeckSize) ->
-    CardNumber = if DeckSize =:= 32 -> pick_32();
-                    true -> pick_54()
-                 end,
+    CardNumber = pick_number(DeckSize),
 
     lists:concat([CardNumber, ' of ', pick_random(?COLORS),  '.']).
 
-pick_32() ->
-    pick_random(?DECK_32).
-
-pick_54() ->
-    pick_random(?DECK_54).
+pick_number(MaxSize) ->
+    if MaxSize =:= 32 -> pick_random(?DECK_32);
+       true -> pick_random(?DECK_54)
+    end.
 
 pick_random(List) ->
     Index = random:uniform(length(List)),
